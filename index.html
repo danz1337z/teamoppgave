@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundboard</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app"></div>
+   
+    
+    <script>
+        //model
+        let sounds = ['le.mp3', 'latter.mp3', 'BA_DUM_TSS.mp3', 'CLICK_Nice.mp3', 'Deja_Vu_sound_effect.mp3', 'Goofy_Yell.mp3', 'ENEMY_AC130_ABOVE.mp3', 'I_CANT_BELIEVE_YOUVE_DONE_THIS.mp3'];
+        //let image =["https://s1.1zoom.me/big0/752/Starfish_Shells_Summer_Glasses_Sand_569727_1280x853.jpg"]
+        
+      
+        //view
+        showApp();
+        function showApp(){
+            let html = ``;
+            let appDiv = document.getElementById('app');
+            html += "<h1>Soundboard</h1>"; 
+            for (let index = 0; index < sounds.length; index++){
+                html += `
+                
+                 <button class='btn${index}' onclick="makesSound(${index})">&#127925;</button>
+                
+                
+                `;
+            }
+            appDiv.innerHTML = html;
+           
+        }
+        // <button id='btn2' onclick="makesSound(${index})">B</button>
+        //         <button id='btn3' onclick="makesSound(${index})">C</button>
+        //         <button id='btn4' onclick="makesSound(${index})">D</button>
+        
+        //controller
+
+            function makesSound(smt){
+                const music = new Audio(sounds[smt]);
+                music.play();
+                
+            }
+
+
+        
+
+
+    </script>
+</body>
+</html> 
